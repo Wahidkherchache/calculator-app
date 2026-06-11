@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+button {
+    border: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    outline: none;
+    font-weight: bold;
+    background-color: hsl(0, 0%, 30%);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: clamp(0.875rem, 2vw, 1.375rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
+    aspect-ratio: 1;
+}
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+button:active {
+    background-color: hsl(0, 0%, 50%);
+}
+input {
+    padding: clamp(0.5rem, 2vw, 1rem);
+    margin: 0;
+    border: none;
+    text-align: right;
+    font-size: clamp(1.5rem, 8vw, 3.125rem);
+    background-color: hsl(0, 0%, 20%);
+    outline: none;
+    color: white;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(0.4rem, 1.5vw, 0.75rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
+}
+.container {
+    background-color: hsl(0, 0%, 15%);
+    width: 100%;
+    max-width: min(90vw, 500px);
+    overflow: hidden;
+    border-radius: 0.625rem;
+}
+.operator {
+    background-color: hsl(35, 100%, 55%);
+    transition: background-color 0.3s ease;
+}
+.operator:hover {
+    background-color: hsl(35, 100%, 65%);
+}
+.operator:active {
+    background-color: hsl(35, 100%, 75%);
+}
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
