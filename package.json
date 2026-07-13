@@ -1,5 +1,5 @@
 {
-  "name": "aurora-calculator",
+  "name": "calculator",
   "version": "1.0.0",
   "private": true,
   "description": "A modern calculator web app with a polished UI, memory, history, and theme switching.",
