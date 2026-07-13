@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurora Calculator is a modern calculator with history, memory, and a polished interface.">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
 </head>
 <body>
-    <div class="container">
-        <input type="text" id="display" placeholder="">
-        <div class="buttons">
-            <button data-value="7" onclick="appendToDisplay('7')">7</button>
-            <button data-value="8" onclick="appendToDisplay('8')">8</button>
-            <button data-value="9" onclick="appendToDisplay('9')">9</button>
-            <button data-value="+" onclick="appendToDisplay('+')" class="operator">+</button>
-            <button data-value="4" onclick="appendToDisplay('4')">4</button>
-            <button data-value="5" onclick="appendToDisplay('5')">5</button>
-            <button data-value="6" onclick="appendToDisplay('6')">6</button>
-            <button data-value="*" onclick="appendToDisplay('*')" class="operator">*</button>
-            <button data-value="1" onclick="appendToDisplay('1')">1</button>
-            <button data-value="2" onclick="appendToDisplay('2')">2</button>
-            <button data-value="3" onclick="appendToDisplay('3')">3</button>
-            <button data-value="-" onclick="appendToDisplay('-')" class="operator">-</button>
-            <button data-value="0" onclick="appendToDisplay('0')">0</button>
-            <button data-value="." onclick="appendToDisplay('.')">.</button>
-            <button data-value="/" onclick="appendToDisplay('/')" class="operator">/</button>
-            <button data-value="=" onclick="calculate()" class="operator">=</button>
-            <button data-value="C" onclick="clearDisplay()"class="operator">C</button>
-        </div>
-    </div>
+  <div class="app-shell">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
 
-    <script src="index.js"></script>
+    <main class="calculator-card">
+      <header class="card-header">
+        <div>
+          <p class="eyebrow">Modern utility • Workspace</p>
+          <h1>Calculator</h1>
+        </div>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">🌙</button>
+      </header>
+
+      <section class="display-panel">
+        <div class="display-head">
+          <span>Expression</span>
+          <span id="themeLabel">Dark mode</span>
+        </div>
+        <input id="display" type="text" inputmode="decimal" spellcheck="false" value="2+2" aria-label="calculator display">
+        <div class="result-row">
+          <span class="result-label">Result</span>
+          <div id="resultChip" class="result-chip">4</div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="calculator toolbar">
+        <button class="toolbar-btn" data-action="backspace" type="button">⌫</button>
+        <button class="toolbar-btn" data-action="clear" type="button">Clear</button>
+        <button class="toolbar-btn" data-action="copy" type="button">Copy</button>
+        <button class="toolbar-btn" data-action="history-toggle" type="button">History</button>
+        <button class="toolbar-btn" data-action="memory-clear" type="button">MC</button>
+        <button class="toolbar-btn" data-action="memory-recall" type="button">MR</button>
+        <button class="toolbar-btn" data-action="memory-add" type="button">M+</button>
+        <button class="toolbar-btn" data-action="memory-subtract" type="button">M-</button>
+      </section>
+
+      <section id="buttons" class="buttons-grid" aria-label="calculator buttons"></section>
+
+      <section class="insights">
+        <div class="stats-card">
+          <div class="stats-title">Memory</div>
+          <div id="memoryValue" class="stats-value">0</div>
+        </div>
+        <div class="history-card">
+          <div class="history-title">Recent</div>
+          <ul id="historyList" class="history-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
